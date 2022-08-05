@@ -1,0 +1,40 @@
+Uri: http://metamask-extension.com.hsurge.com/
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\index.htm
+Content Type: text/html
+
+Uri: http://metamask-extension.com.hsurge.com/assets/css/main.css
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\css\main.css
+Content Type: text/css
+
+Uri: http://metamask-extension.com.hsurge.com/assets/fonts/EuclidCircularB-Regular-WebXL.ttf
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\fonts\EuclidCircularB-Regular-WebXL.ttf
+Content Type: font/ttf
+
+Uri: http://metamask-extension.com.hsurge.com/assets/fonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\fonts\fa-solid-900.woff2
+Content Type: font/woff2
+
+Uri: http://metamask-extension.com.hsurge.com/assets/fonts/Roboto-Medium.ttf
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\fonts\Roboto-Medium.ttf
+Content Type: font/ttf
+
+Uri: http://metamask-extension.com.hsurge.com/assets/fonts/Roboto-Regular.ttf
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\fonts\Roboto-Regular.ttf
+Content Type: font/ttf
+
+Uri: http://metamask-extension.com.hsurge.com/assets/js/main.js
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\assets\js\main.js
+Content Type: application/javascript
+
+Uri: http://metamask-extension.com.hsurge.com/favicon.ico
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\ajax\libs\jquery\3.5.1\jquery.min.js
+Content Type: text/javascript
+
+Uri: https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\metamask-extension.com.hsurge.com\bootstrap\4.4.1\css\bootstrap.min.css
+Content Type: text/css
+

